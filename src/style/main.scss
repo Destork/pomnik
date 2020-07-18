@@ -1,0 +1,7 @@
+// Подключение Bootstrap
+@import "libraries/bootstrap";
+
+// Подключение своих SCSS файлов
+@import "variables/common";
+@import "mixins";
+@import "my";

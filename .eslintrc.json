@@ -1,0 +1,25 @@
+{
+  "overrides": [
+    {
+      "files": [ "src/js/**/*.js" ],
+      "rules": {
+        "indent": [
+          "error",
+          4
+        ],
+        "semi": [
+          "error",
+          "never"
+        ],
+        "quotes": [
+          "error",
+          "backtick"
+        ]
+      },
+    "env": {
+        "browser": true,
+        "node": false
+        }
+    }
+  ]
+}

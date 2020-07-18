@@ -1,0 +1,11 @@
+{% set pageId = 'index' %}
+{% extends 'html/templates/layout.main.html' %}
+
+{% block content %}
+<!--// Index Page Content: start -->
+<div class="row">
+     from 'html/templates/macros/page.blocks.html' import pageBlocks 
+     pageBlocks(pages[pageId]) 
+</div>
+<!--// Index Page Content: end -->
+{% endblock %}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/main.min.css">
+    <title>{% if pages[pageId]['pageInfo']['title'] %} {{ pages[pageId]['pageInfo']['title'] }}{% endif %}</title>
+</head>
+<body>
+<div class="container-fluid px-0 d-flex flex-column min-vh-100">
+    {% block navigation %}
+        {% include 'html/common/header.html' %}
+    {% endblock %}
+
+    <main role="main" class="container custom-paddings bg-white overflow-hidden flex-grow-1 flex-shrink-0{% if pages[pageId]['pageInfo']['contentClass'] %} {{ pages[pageId]['pageInfo']['contentClass'] }}{% endif %}">
+    {% block content %}
+
+    {% endblock %}
+    </main>
+
+    <footer>
+        {% block footer %}
+            {% include 'html/common/footer.html' %}
+        {% endblock %}
+    </footer>
+</div>
+<script src="/js/main.min.js"></script>
+{% block scripts %}
+    <!-- custom page scripts can be places here -->
+{% endblock %}
+</body>
+</html>
