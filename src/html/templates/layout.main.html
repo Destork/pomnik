@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.jpg">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.jpg">
+    <link rel="canonical" href="{{ globals.httpUrl }}{{ pages[pageId]['pageInfo']['canonicalUrl'] }}">
     <link rel="stylesheet" href="/css/main.min.css">
     <title>{% if pages[pageId]['pageInfo']['title'] %} {{ pages[pageId]['pageInfo']['title'] }}{% endif %}</title>
 </head>
@@ -12,7 +15,7 @@
         {% include 'html/common/header.html' %}
     {% endblock %}
 
-    <main role="main" class="container custom-paddings bg-white overflow-hidden flex-grow-1 flex-shrink-0{% if pages[pageId]['pageInfo']['contentClass'] %} {{ pages[pageId]['pageInfo']['contentClass'] }}{% endif %}">
+    <main role="main" class="container bg-white overflow-hidden flex-grow-1 flex-shrink-0{% if pages[pageId]['pageInfo']['contentClass'] %} {{ pages[pageId]['pageInfo']['contentClass'] }}{% endif %}">
     {% block content %}
 
     {% endblock %}

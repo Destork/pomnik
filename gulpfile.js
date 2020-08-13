@@ -7,6 +7,7 @@ var path = {
         js: 'build/js/',
         css: 'build/css/',
         img: 'build/img/',
+        favicons: 'build/',
         fonts: 'build/fonts/',
         data: 'src/html/',
         pages: 'src/html/data/'
@@ -15,10 +16,15 @@ var path = {
         html: 'src/html/pages/**/*.html',
         js: 'src/js/main.js',
         style: 'src/style/main.scss',
-        img: 'src/img/**/*.*',
+        img: [
+            'src/img/**/*.*',
+            '!src/img/favicons/*.*'
+        ],
+        favicons: 'src/img/favicons/*.*',
         fonts: 'src/fonts/**/*.*',
         data: 'src/html/data/*.json',
-        pages: 'src/html/data/pages/*.json'
+        pages: 'src/html/data/pages/*.json',
+        "fontAwesome": 'node_modules/font-awesome/fonts/*.*'
     },
     watch: {
         html: 'src/html/**/*.html',
@@ -155,26 +161,38 @@ gulp.task('js:build', function () {
 });
 
 // перенос шрифтов
-gulp.task('fonts:build', function () {
-    return gulp.src(path.src.fonts)
-        .pipe(gulp.dest(path.build.fonts));
-});
+gulp.task('fonts:build', gulp.parallel(
+    function () {
+        return gulp.src(path.src.fontAwesome)
+            .pipe(gulp.dest(path.build.fonts));
+    },
+    function () {
+        return gulp.src(path.src.fonts)
+            .pipe(gulp.dest(path.build.fonts));
+    }
+));
 
 // обработка картинок
-gulp.task('image:build', function () {
-    return gulp.src(path.src.img) // путь с исходниками картинок
-        .pipe(cache(imagemin([ // сжатие изображений
-            imagemin.gifsicle({interlaced: true}),
-            jpegrecompress({
-                progressive: true,
-                max: 90,
-                min: 80
-            }),
-            pngquant(),
-            imagemin.svgo({plugins: [{removeViewBox: false}]})
-        ])))
-        .pipe(gulp.dest(path.build.img)); // выгрузка готовых файлов
-});
+gulp.task('image:build', gulp.parallel(
+    function () {
+        return gulp.src(path.src.favicons)
+            .pipe(gulp.dest(path.build.favicons));
+    },
+    function () {
+        return gulp.src(path.src.img) // путь с исходниками картинок
+            .pipe(cache(imagemin([ // сжатие изображений
+                imagemin.gifsicle({interlaced: true}),
+                jpegrecompress({
+                    progressive: true,
+                    max: 90,
+                    min: 80
+                }),
+                pngquant(),
+                imagemin.svgo({plugins: [{removeViewBox: false}]})
+            ])))
+            .pipe(gulp.dest(path.build.img)); // выгрузка готовых файлов
+    }
+));
 
 // удаление каталога build
 gulp.task('clean:build', function () {

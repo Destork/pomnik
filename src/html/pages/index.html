@@ -4,8 +4,29 @@
 {% block content %}
 <!--// Index Page Content: start -->
 <div class="row">
-     from 'html/templates/macros/page.blocks.html' import pageBlocks 
-     pageBlocks(pages[pageId]) 
+     from 'html/templates/macros/page.blocks.html' import pageBlocks
+     pageBlocks(pages[pageId])
+     {% set item = {
+          "data": {
+               "image": "/img/single_001.jpg",
+               "link": "#",
+               "title": "Одиночные"
+          }
+     } %}
+     {% from 'html/templates/teasers/main.html' import teasers_main %}
+     <div class="col-12">
+          <div class="row">
+               <div class="col-12 col-sm-6 col-md-4">
+                    {{ teasers_main(item) }}
+               </div>
+               <div class="col-12 col-sm-6 col-md-4">
+                    {{ teasers_main(item) }}
+               </div>
+               <div class="col-12 col-sm-6 col-md-4">
+                    {{ teasers_main(item) }}
+               </div>
+          </div>
+     </div>
 </div>
 <!--// Index Page Content: end -->
 {% endblock %}

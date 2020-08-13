@@ -1,0 +1,35 @@
+<div class="contact-info__container w-100 pt-2 pb-md-1">
+    <div class="container">
+        <div class="row no-gutters align-items-md-center">
+            <ul class="contact-info__socials list-inline col-md-3 text-center text-md-left mb-2 mb-md-0">
+                {% for item in header.contactInfo.socials %}
+                <li class="list-inline-item">
+                    <a href="{{ item.link }}" rel="nofollow noopener" target="_blank" aria-label="{{ item.label }}" class="tap-icon text-decoration-none">
+                        <i class="fa fa-{{ item.icon }}" aria-hidden="true"></i>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            <ul class="contact-info__contacts list-inline col-md-9 text-center text-md-right mb-0">
+                {% for item in header.contactInfo.contacts %}
+                <li class="list-inline-item mr-0 mb-2 mb-md-1{% if not loop.first %} ml-2 ml-md-1{% endif %}">
+                    {% if item.type == 'link' %}
+                    <a href="{{ item.link }}" class="text-decoration-none">
+                    {% elif item.type == 'text' %}
+                    <span>
+                    {% endif %}
+                        {% if item.icon %}
+                        <i class="fa fa-{{ item.icon }}" aria-hidden="true"></i>
+                        {% endif %}
+                        {{ item.text }}
+                    {% if item.type == 'link' %}
+                    </a>
+                    {% elif item.type == 'text' %}
+                    </span>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

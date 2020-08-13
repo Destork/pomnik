@@ -1,0 +1,14 @@
+{% macro teasers_main(item) %}
+<!-- macro teasers main: start -->
+    <article class="teaser-main position-relative overflow-hidden{% if item.params.container_class %} {{ item.params.container_class }}{% endif %}">
+        <a href="{{ item.data.link }}" class="teaser-main__link position-absolute h-100 w-100{% if item.params.link_class %} {{ item.params.link_class }}{% endif %}"></a>
+        <img src="{{ item.data.image }}" class="teaser-main__image{% if item.params.image_class %} {{ item.params.image_class }}{% endif %}">
+        {% if item.data.title %}
+        <div class="teaser-main__title__container position-absolute p-2">
+            <div class="teaser-main__title__background position-absolute w-100 h-100 rounded"></div>
+            <{{ item.params.title_tag or 'p' }} class="teaser-main__title position-relative text-uppercase text-center overflow-hidden m-0{% if item.params.title_class %} {{ item.params.title_class }}{% endif %}">{{ item.data.title }}</{{ item.params.title_tag or 'p' }}>
+        </div>
+        {% endif %}
+    </article>
+<!-- macro teasers main: end -->
+{% endmacro %}

@@ -1,0 +1,22 @@
+:root {
+  @each $color, $value in $colors {
+    --#{$color}: #{$value};
+  }
+}
+
+.tap-icon {
+  min-width: 1em;
+  min-height: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: (38rem / 16);
+  line-height: 1;
+
+  .fa {
+    font-size: 1rem;
+  }
+}
+.border-dark {
+  border-color: var(--dark-gray) !important;
+}

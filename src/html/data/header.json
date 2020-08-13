@@ -1,0 +1,51 @@
+{
+  "contactInfo": {
+    "socials": [
+      {
+        "icon": "facebook",
+        "link": "#",
+        "label": "facebook"
+      },
+      {
+        "icon": "youtube",
+        "link": "#",
+        "label": "Youtube"
+      },
+      {
+        "icon": "instagram",
+        "link": "https://www.instagram.com/pomnik.by/",
+        "label": "Instagram"
+      },
+      {
+        "icon": "vk",
+        "link": "#",
+        "label": "VK"
+      }
+    ],
+    "contacts": [
+      {
+        "type": "link",
+        "link": "tel:+375299029696",
+        "text": "+375 29 902 96 96",
+        "icon": "phone"
+      },
+      {
+        "type": "link",
+        "link": "tel:+375297077617",
+        "text": "+375 29 707 76 17",
+        "icon": "mobile"
+      },
+      {
+        "type": "link",
+        "link": "mailto:pomnik_info@tut.by",
+        "text": "pomnik_info@tut.by",
+        "icon": "envelope"
+      },
+      {
+        "type": "text",
+        "text": "ПН-Пт 9:00-18:00 СБ 9:00-16:00",
+        "icon": "clock-o"
+      }
+    ]
+  }
+}
