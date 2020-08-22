@@ -2,6 +2,33 @@
   @each $color, $value in $colors {
     --#{$color}: #{$value};
   }
+
+  --F1: 1.6rem;
+  --F1-lheight: 1.2;
+
+  --F2: 1.3rem;
+  --F2-lheight: 1.2;
+
+  --F3: 1.05rem;
+  --F3-lheight: 1.15;
+
+  --F4: 1.05rem;
+  --F4-lheight: 1.15;
+
+  --F5: 1.05rem;
+  --F5-lheight: 1.45;
+
+  --F6: 0.95rem;
+  --F6-lheight: 1.15;
+
+  --F7: 0.9rem;
+  --F7-lheight: 1.15;
+
+  --F8: 0.8rem;
+  --F8-lheight: 1.15;
+
+  --F9: 0.65rem;
+  --F9-lheight: 1.15;
 }
 
 .tap-icon {

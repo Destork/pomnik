@@ -5,11 +5,13 @@
   }
 
   &__link {
+    z-index: 1;
     top: 0;
     left: 0;
   }
 
   &__title {
+    @include font-2();
     color: var(--white);
     z-index: 2;
     max-width: 100%;

@@ -1,0 +1,48 @@
+@mixin font-1() {
+  font-size   : var(--F1);
+  line-height : var(--F1-lheight);
+  font-weight: bold;
+}
+
+@mixin font-2() {
+  font-size   : var(--F2);
+  line-height : var(--F2-lheight);
+  font-weight: bold;
+}
+
+@mixin font-3() {
+  font-size   : var(--F3);
+  line-height : var(--F3-lheight);
+  font-weight: bold;
+}
+
+@mixin font-4() {
+  font-size   : var(--F4);
+  line-height : var(--F4-lheight);
+}
+
+@mixin font-5() {
+  font-size   : var(--F5);
+  line-height : var(--F5-lheight);
+}
+
+@mixin font-6() {
+  font-size   : var(--F6);
+  line-height : var(--F6-lheight);
+  font-weight: bold;
+}
+
+@mixin font-7() {
+  font-size   : var(--F7);
+  line-height : var(--F7-lheight);
+}
+
+@mixin font-8() {
+  font-size   : var(--F8);
+  line-height : var(--F8-lheight);
+}
+
+@mixin font-9() {
+  font-size   : var(--F9);
+  line-height : var(--F9-lheight);
+}

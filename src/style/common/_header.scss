@@ -3,15 +3,22 @@
     background-color: var(--dark-gray);
     color: var(--dark-white);
   }
+
   &__socials {
+    @include font-5();
+
     a {
       color: var(--dark-white);
     }
   }
+
   &__contacts {
+    @include font-5();
+
     .fa {
       margin-right: (6rem / 16);
     }
+
     .list-inline-item {
       > * {
         min-height: (38rem / 16);
@@ -29,6 +36,7 @@
     }
   }
 }
+
 @include media-breakpoint-down(md) {
   .navbar-expand-md {
     > .container {

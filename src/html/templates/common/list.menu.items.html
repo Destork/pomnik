@@ -1,5 +1,116 @@
-{% macro list_menu_items(params) %}
-<!-- macro list menu items: start -->
+<!--
+@desc Menu items macro
 
-<!-- macro list menu items: end -->
+@param array   items
+
+@param string  items.additionalItemClasses                   CSS class for item
+@param array   items.additionalItemAttributes                Additional item attributes
+@param string  items.additionalLinkClasses                   CSS class for link
+@param string  items.id                                      Item id
+@param boolean items.hasDropdown                             Boolean flag if has dropdown
+@param boolean items.allLinkDropdown                         Boolean flag if all link dropdown toggle
+@param string  items.link                                    Link url
+@param string  items.linkTitle                               Link title
+@param string  items.linkRel                                 Link rel
+@param array   items.additionalLinkAttributes                Additional link attributes
+@param string  items.linkTextType                            Link text type
+@param string  items.linkMacroFile                           Link text macro file
+@param string  items.linkMacroFunc                           Link text macro function name
+@param string  items.linkText                                Link text
+@param string  items.additionalDropDownClasses               CSS class for dropdown
+
+@param array   items.dropdownItems
+@param string  items.dropdownItems.additionalLinkClasses     CSS class for link in dropdown
+@param string  items.dropdownItems.link                      Link url in dropdown
+@param string  items.dropdownItems.linkTitle                 Link title in dropdown
+@param string  items.dropdownItems.linkRel                   Link rel in dropdown
+@param string  items.dropdownItems.linkText                  Link text in dropdown
+@param array   items.dropdownItems.additionalAttributes      Additional link attributes in dropdown
+
+@param string  activeItem                                    Id active item
+@param string  additionalNavClasses                          CSS class for nav
+
+<code>
+items = [
+    {
+        "id": "travel",
+        "link": "#",
+        "linkTitle": "Travel & clubs",
+        "linkText": "Travel & clubs",
+        "additionalLinkClasses": "waves-effect waves-light",
+        "additionalItemAttributes": [
+            ["data-dropdown-breakpoint", "md"]
+        ],
+        "additionalItemClasses": "disable-dropdown-breakpont mg-color-wrap mg-cl-travel",
+        "hasDropdown": true,
+        "additionalDropDownClasses": "rounded-0 mt-0 justify-content-md-between align-items-md-start",
+        "dropdownItems": [
+            {
+                "id": "übersicht",
+                "link": "#",
+                "linkTitle": "Übersicht",
+                "linkText": "Übersicht",
+                "additionalLinkClasses": "waves-effect waves-light d-md-none"
+            }
+        ]
+    }
+]
+</code>
+-->
+{% macro list_menu_items(items, activeItem = '', additionalNavClasses = '') %}
+<!--// Menu Items: start -->
+<ul class="navbar-nav flex-shrink-0{% if additionalNavClasses %} {{ additionalNavClasses }}{% endif %}">
+    {% for item in items %}
+    <li class="nav-item flex-shrink-0{% if activeItem == item.id %} active{% endif %}{% if item.hasDropdown %} dropdown d-flex d-md-block flex-wrap{% endif %}{% if item.additionalItemClasses %} {{ item.additionalItemClasses }}{% endif %}"
+        {% if item.additionalItemAttributes %}
+            {% for attrName, attrValue in item.additionalItemAttributes %}
+                {{ attrName }}{% if attrValue %}="{{ attrValue }}"{% endif %}
+            {% endfor %}
+        {% endif %}>
+        <a class="nav-link w-100{% if item.hasDropdown %} d-flex justify-content-between align-items-center dropdown-toggle{% endif %}{% if item.additionalLinkClasses %} {{ item.additionalLinkClasses }}{% endif %}"
+           href="{{ item.link }}"
+           title="{{ item.linkTitle }}"
+           {% if item.linkRel %}
+            rel="{{ item.linkRel }}"
+           {% endif %}
+           {% if item.additionalLinkAttributes %}
+            {% for attrName, attrValue in item.additionalLinkAttributes %}
+                {{ attrName }}{% if attrValue %}="{{ attrValue }}"{% endif %}
+            {% endfor %}
+           {% endif %}
+           {% if item.allLinkDropdown %}
+            data-toggle="dropdown"
+           {% endif %}>
+            {% if item.linkTextType == 'html' %}
+                {{ item.linkText | safe }}
+            {% elif item.linkTextType == 'macro' %}
+                {% import item.linkMacroFile as macro %}
+                {{ macro[item.linkMacroFunc](item.linkText) }}
+            {% else %}
+                {{ item.linkText }}
+            {% endif %}
+        </a>
+        {% if item.hasDropdown %}
+        <div class="dropdown-menu w-100{% if item.additionalDropDownClasses %} {{ item.additionalDropDownClasses }}{% endif %}">
+            {% for dropdownItem in item.dropdownItems %}
+            <a class="nav-link dropdown-item w-100{% if dropdownItem.additionalLinkClasses %} {{ dropdownItem.additionalLinkClasses }}{% endif %}"
+               href="{{ dropdownItem.link }}"
+               title="{{ dropdownItem.linkTitle }}"
+               {% if dropdownItem.linkRel %}
+               rel="{{ dropdownItem.linkRel }}"
+               {% endif %}
+               {% if dropdownItem.additionalAttributes %}
+                   {% for attrName, attrValue in dropdownItem.additionalAttributes %}
+                    {{ attrName }}{% if attrValue %}="{{ attrValue }}"{% endif %}
+                   {% endfor %}
+               {% endif %}>
+                {{ dropdownItem.linkText }}
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+<!--// Menu Items: end -->
 {% endmacro %}
