@@ -1,5 +1,37 @@
 'use strict';
 
+/* подключаем gulp и плагины */
+var gulp = require('gulp'),  // подключаем Gulp
+    webserver = require('browser-sync'), // сервер для работы и автоматического обновления страниц
+    plumber = require('gulp-plumber'), // модуль для отслеживания ошибок
+    template = require('gulp-nunjucks-render'), // модуль для импорта содержимого одного файла в другой
+    sourcemaps = require('gulp-sourcemaps'), // модуль для генерации карты исходных файлов
+    sass = require('gulp-sass'), // модуль для компиляции SASS (SCSS) в CSS
+    autoprefixer = require('gulp-autoprefixer'), // модуль для автоматической установки автопрефиксов
+    cleanCSS = require('gulp-clean-css'), // плагин для минимизации CSS
+    cache = require('gulp-cache'), // модуль для кэширования
+    imagemin = require('gulp-imagemin'), // плагин для сжатия PNG, JPEG, GIF и SVG изображений
+    jpegrecompress = require('imagemin-jpeg-recompress'), // плагин для сжатия jpeg
+    pngquant = require('imagemin-pngquant'), // плагин для сжатия png
+    rimraf = require('gulp-rimraf'), // плагин для удаления файлов и каталогов
+    json_config = require('gulp-json-config'),
+    data = require('gulp-data'),
+    fs = require('fs'),
+    eslint = require('gulp-eslint'),
+    html_minify = require('gulp-htmlmin'),
+    rename = require('gulp-rename'),
+    webpack = require('webpack'),
+    webpack_stream = require('webpack-stream'),
+    TerserPlugin = require('terser-webpack-plugin'),
+    CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin'),
+    CircularDependencyPlugin = require('circular-dependency-plugin'),
+    DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin'),
+    HappyPack = require('happypack'),
+    path_plugin = require('path');
+
+const NODE_ENV      = process.env.NODE_ENV ? "production" : "development";
+const isDevelopment = NODE_ENV === "development";
+
 /* пути к исходным файлам (src), к готовым файлам (build), а также к тем, за изменениями которых нужно наблюдать (watch) */
 var path = {
     build: {
@@ -61,31 +93,74 @@ var config = {
     },
     pages: {
         fileName: 'pages.json'
+    },
+    webpack: {
+        mode: NODE_ENV,
+        entry: "./src/js/main.js",
+        output: {
+            filename: "[name].js",
+            path: path_plugin.join(__dirname, "/build/js"),
+            publicPath: "/js/"
+        },
+        resolve: {
+            modules: ["node_modules", path_plugin.join(__dirname, "src/js")]
+        },
+        devtool: isDevelopment ? "eval-source-map" : "source-map",
+        optimization: {
+            minimizer: [
+                new TerserPlugin({
+                    terserOptions: {
+                        parse: {
+                            ecma: 8
+                        },
+                        compress: {
+                            ecma: 5,
+                            warnings: false,
+                            comparisons: false,
+                            inline: 2
+                        },
+                        mangle: {
+                            safari10: true
+                        },
+                        output: {
+                            ecma: 5,
+                            comments: false,
+                            ascii_only: true
+                        }
+                    },
+                    parallel: true
+                })
+            ]
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    use: {
+                        loader: "happypack/loader"
+                    }
+                }
+            ]
+        },
+        plugins: [
+            new webpack.DefinePlugin({
+                "process.env.NODE_ENV": JSON.stringify(NODE_ENV)
+            }),
+            new CaseSensitivePathsPlugin(),
+            new CircularDependencyPlugin({
+                // exclude detection of files based on a RegExp
+                exclude: /a\.js|node_modules/,
+                // add errors to webpack instead of warnings
+                failOnError: true
+            }),
+            new DuplicatePackageCheckerPlugin(),
+            new HappyPack({
+                loaders: ["babel-loader"]
+            })
+        ]
     }
 };
-
-/* подключаем gulp и плагины */
-var gulp = require('gulp'),  // подключаем Gulp
-    webserver = require('browser-sync'), // сервер для работы и автоматического обновления страниц
-    plumber = require('gulp-plumber'), // модуль для отслеживания ошибок
-    template = require('gulp-nunjucks-render'), // модуль для импорта содержимого одного файла в другой
-    sourcemaps = require('gulp-sourcemaps'), // модуль для генерации карты исходных файлов
-    sass = require('gulp-sass'), // модуль для компиляции SASS (SCSS) в CSS
-    autoprefixer = require('gulp-autoprefixer'), // модуль для автоматической установки автопрефиксов
-    cleanCSS = require('gulp-clean-css'), // плагин для минимизации CSS
-    cache = require('gulp-cache'), // модуль для кэширования
-    imagemin = require('gulp-imagemin'), // плагин для сжатия PNG, JPEG, GIF и SVG изображений
-    jpegrecompress = require('imagemin-jpeg-recompress'), // плагин для сжатия jpeg
-    pngquant = require('imagemin-pngquant'), // плагин для сжатия png
-    rimraf = require('gulp-rimraf'), // плагин для удаления файлов и каталогов
-    json_config = require('gulp-json-config'),
-    data = require('gulp-data'),
-    fs = require('fs'),
-    include = require('gulp-include'),
-    eslint = require('gulp-eslint'),
-    html_minify = require('gulp-htmlmin'),
-    rename = require('gulp-rename');
-
 /* задачи */
 
 // запуск сервера
@@ -149,13 +224,7 @@ gulp.task('css:build', function () {
 gulp.task('js:build', function () {
     return gulp.src(path.src.js) // получим файл main.js
         .pipe(plumber()) // для отслеживания ошибок
-        .pipe(sourcemaps.init()) //инициализируем sourcemap
-        .pipe(include()) // импортируем все указанные файлы в main.js
-        .pipe(eslint())
-        // .pipe(eslint.format())
-        .pipe(gulp.dest(path.build.js))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(sourcemaps.write('./')) //  записываем sourcemap
+        .pipe(webpack_stream(config.webpack, webpack))
         .pipe(gulp.dest(path.build.js)) // положим готовый файл
         .pipe(webserver.reload({stream: true})); // перезагрузим сервер
 });

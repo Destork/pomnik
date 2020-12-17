@@ -57,7 +57,7 @@ items = [
 ]
 </code>
 -->
-{% macro list_menu_items(items, activeItem = '', additionalNavClasses = '') %}
+{% macro list_menu_items(items, activeItem = '', activeSubItem = '', additionalNavClasses = '') %}
 <!--// Menu Items: start -->
 <ul class="navbar-nav flex-shrink-0{% if additionalNavClasses %} {{ additionalNavClasses }}{% endif %}">
     {% for item in items %}
@@ -78,8 +78,8 @@ items = [
                 {{ attrName }}{% if attrValue %}="{{ attrValue }}"{% endif %}
             {% endfor %}
            {% endif %}
-           {% if item.allLinkDropdown %}
-            data-toggle="dropdown"
+           {% if item.hasDropdown %}
+            data-bs-toggle="dropdown"
            {% endif %}>
             {% if item.linkTextType == 'html' %}
                 {{ item.linkText | safe }}
@@ -91,23 +91,25 @@ items = [
             {% endif %}
         </a>
         {% if item.hasDropdown %}
-        <div class="dropdown-menu w-100{% if item.additionalDropDownClasses %} {{ item.additionalDropDownClasses }}{% endif %}">
+        <ul class="dropdown-menu w-100{% if item.additionalDropDownClasses %} {{ item.additionalDropDownClasses }}{% endif %}">
             {% for dropdownItem in item.dropdownItems %}
-            <a class="nav-link dropdown-item w-100{% if dropdownItem.additionalLinkClasses %} {{ dropdownItem.additionalLinkClasses }}{% endif %}"
-               href="{{ dropdownItem.link }}"
-               title="{{ dropdownItem.linkTitle }}"
-               {% if dropdownItem.linkRel %}
-               rel="{{ dropdownItem.linkRel }}"
-               {% endif %}
-               {% if dropdownItem.additionalAttributes %}
-                   {% for attrName, attrValue in dropdownItem.additionalAttributes %}
-                    {{ attrName }}{% if attrValue %}="{{ attrValue }}"{% endif %}
-                   {% endfor %}
-               {% endif %}>
-                {{ dropdownItem.linkText }}
-            </a>
+            <li class="{% if activeSubItem == dropdownItem.id %} active{% endif %}">
+                <a class="nav-link dropdown-item w-100{% if dropdownItem.additionalLinkClasses %} {{ dropdownItem.additionalLinkClasses }}{% endif %}"
+                   href="{{ dropdownItem.link }}"
+                   title="{{ dropdownItem.linkTitle }}"
+                   {% if dropdownItem.linkRel %}
+                   rel="{{ dropdownItem.linkRel }}"
+                   {% endif %}
+                   {% if dropdownItem.additionalAttributes %}
+                       {% for attrName, attrValue in dropdownItem.additionalAttributes %}
+                        {{ attrName }}{% if attrValue %}="{{ attrValue }}"{% endif %}
+                       {% endfor %}
+                   {% endif %}>
+                    {{ dropdownItem.linkText }}
+                </a>
+            </li>
             {% endfor %}
-        </div>
+        </ul>
         {% endif %}
     </li>
     {% endfor %}

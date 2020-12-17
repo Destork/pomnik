@@ -1,8 +1,8 @@
-// Импортируем lazysizes
-//require ./../../node_modules/lazysizes/lazysizes.js
+import 'lazysizes';
+import 'scroll-lock';
+import '@popperjs/core';
+import Collapse from 'bootstrap/js/dist/collapse';
+import Dropdown from 'bootstrap/js/dist/dropdown';
+import MyInit  from './my';
 
-// Импортируем Scroll Lock
-//require ./../../node_modules/scroll-lock/dist/scroll-lock.js
-
-// Импортируем другие основной скрипт
-//=require ./my.js
+MyInit();

@@ -2,6 +2,8 @@
     "pageInfo": {
         "title": "Каталог",
         "description": "",
-        "canonicalUrl": ""
+        "canonicalUrl": "",
+        "selected_menu_item": "",
+        "selected_menu_sub_item": ""
     }
 }

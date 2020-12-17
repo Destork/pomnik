@@ -1,7 +1,7 @@
 <div class="contact-info__container w-100 pt-2 pb-md-1">
     <div class="container">
         <div class="row no-gutters align-items-md-center">
-            <ul class="contact-info__socials list-inline col-md-3 text-center text-md-left mb-2 mb-md-0">
+            <ul class="contact-info__socials list-inline col-md-3 text-center text-md-start mb-2 mb-md-0">
                 {% for item in header.contactInfo.socials %}
                 <li class="list-inline-item">
                     <a href="{{ item.link }}" rel="nofollow noopener" target="_blank" aria-label="{{ item.label }}" class="tap-icon text-decoration-none">
@@ -10,7 +10,7 @@
                 </li>
                 {% endfor %}
             </ul>
-            <ul class="contact-info__contacts list-inline col-md-9 text-center text-md-right mb-0">
+            <ul class="contact-info__contacts list-inline col-md-9 text-center text-md-end mb-0">
                 {% for item in header.contactInfo.contacts %}
                 <li class="list-inline-item mr-0 mb-2 mb-md-1{% if not loop.first %} ml-2 ml-md-1{% endif %}">
                     {% if item.type == 'link' %}

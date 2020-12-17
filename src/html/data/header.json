@@ -47,5 +47,143 @@
         "icon": "clock-o"
       }
     ]
-  }
+  },
+  "menu": [
+    {
+      "id": "pameatniki",
+      "link": "#",
+      "linkTitle": "Памятники",
+      "linkText": "Памятники",
+      "hasDropdown": true,
+      "additionalDropDownClasses": "rounded-0",
+      "dropdownItems": [
+        {
+          "id": "pameatniki_vertikalnie",
+          "link": "#",
+          "linkTitle": "Вертикальные",
+          "linkText": "Вертикальные"
+        },
+        {
+          "id": "pameatniki_gorizontalnie",
+          "link": "#",
+          "linkTitle": "Горизонтальные",
+          "linkText": "Горизонтальные"
+        },
+        {
+          "id": "pameatniki_kompleksi",
+          "link": "#",
+          "linkTitle": "Комплексы",
+          "linkText": "Комплексы"
+        }
+      ]
+    },
+    {
+      "id": "ogradi",
+      "link": "#",
+      "linkTitle": "Ограды",
+      "linkText": "Ограды",
+      "hasDropdown": true,
+      "additionalDropDownClasses": "rounded-0",
+      "dropdownItems": [
+        {
+          "id": "ogradi_granitnie",
+          "link": "#",
+          "linkTitle": "Гранитные",
+          "linkText": "Гранитные"
+        },
+        {
+          "id": "ogradi_metalitiskie",
+          "link": "#",
+          "linkTitle": "Металические",
+          "linkText": "Металичиские"
+        },
+        {
+          "id": "ogradi_kovanie",
+          "link": "#",
+          "linkTitle": "Кованые",
+          "linkText": "Кованые"
+        }
+      ]
+    },
+    {
+      "id": "cveti",
+      "link": "#",
+      "linkTitle": "Цветы",
+      "linkText": "Цветы",
+      "hasDropdown": true,
+      "additionalDropDownClasses": "rounded-0",
+      "dropdownItems": [
+        {
+          "id": "cveti_cveti",
+          "link": "#",
+          "linkTitle": "Цветы",
+          "linkText": "Цветы"
+        },
+        {
+          "id": "cveti_venki",
+          "link": "#",
+          "linkTitle": "Венки",
+          "linkText": "Венки"
+        },
+        {
+          "id": "cveti_korzini",
+          "link": "#",
+          "linkTitle": "Корзины",
+          "linkText": "Корзины"
+        }
+      ]
+    },
+    {
+      "id": "sop_tovari",
+      "link": "#",
+      "linkTitle": "Сопутствующие товары",
+      "linkText": "Сопутствующие товары",
+      "hasDropdown": true,
+      "additionalDropDownClasses": "rounded-0",
+      "dropdownItems": [
+        {
+          "id": "sop_tovari_vazi",
+          "link": "#",
+          "linkTitle": "Вазы",
+          "linkText": "Вазы"
+        },
+        {
+          "id": "sop_tovari_lampadi",
+          "link": "#",
+          "linkTitle": "Лампады",
+          "linkText": "Лампады"
+        },
+        {
+          "id": "sop_tovari_kroshka",
+          "link": "#",
+          "linkTitle": "Крошка",
+          "linkText": "Крошка"
+        },
+        {
+          "id": "sop_tovari_angeli",
+          "link": "#",
+          "linkTitle": "Скульптуры Ангелы",
+          "linkText": "Скульптуры Ангелы"
+        }
+      ]
+    },
+    {
+      "id": "hud_oformlenie",
+      "link": "#",
+      "linkTitle": "Художественное оформление",
+      "linkText": "Худ. оформление"
+    },
+    {
+      "id": "blagousroistva",
+      "link": "#",
+      "linkTitle": "Благоустройства",
+      "linkText": "Благоустройства"
+    },
+    {
+      "id": "kontakti",
+      "link": "#",
+      "linkTitle": "Контакты",
+      "linkText": "Контакты"
+    }
+  ]
 }
