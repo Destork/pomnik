@@ -26,7 +26,6 @@
     "@popperjs/core": "^2.6.0",
     "bootstrap": "^5.0.0-beta1",
     "font-awesome": "^4.7.0",
-    "lazysizes": "^5.2.0",
     "scroll-lock": "^2.1.4"
   },
   "devDependencies": {

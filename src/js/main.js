@@ -1,4 +1,3 @@
-import 'lazysizes';
 import 'scroll-lock';
 import '@popperjs/core';
 import Collapse from 'bootstrap/js/dist/collapse';
