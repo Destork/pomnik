@@ -45,10 +45,6 @@
   }
 }
 
-.border-dark {
-  border-color: var(--dark-gray) !important;
-}
-
 .responsive-map {
   position: relative;
   width: 100%;
@@ -65,4 +61,25 @@
     bottom: 3rem;
     right: 3rem;
   }
+}
+
+.logo-container {
+  width: (120rem / 16);
+  flex-basis: (120rem / 16);
+
+  @include media-breakpoint-up(sm) {
+    width: (135rem / 16);
+    flex-basis: (135rem / 16);
+  }
+
+  @include media-breakpoint-up(md) {
+    width: (150rem / 16);
+    flex-basis: (150rem / 16);
+  }
+}
+
+.logo {
+  width: max-content;
+  max-width: 100%;
+  height: auto;
 }
