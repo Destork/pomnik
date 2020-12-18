@@ -1,0 +1,26 @@
+<!--
+@desc Index Block Header macro
+
+@param object  params
+
+@param string  params.container_class		CSS class container
+@param string  params.title_class			CSS class title
+@param string  params.title_tag				Tag title
+@param string  params.title					Title
+
+<code>
+params = {
+	"container_class": 	"",
+	"title_class": 		"",
+	"title_tag": 		"",
+	"title": 			""
+}
+</code>
+-->
+{% macro index_block_header(params) %}
+<!--// Index Block Header: start -->
+<div class="index-block-header__container w-100 p-4{% if params.container_class %} {{ params.container_class }}{% endif %}">
+	<{{ params.title_tag or "h2" }} class="index-block-header__title text-center text-uppercase my-0{% if params.title_class %} {{ params.title_class }}{% endif %}">{{ params.title }}</{{ params.title_tag or "h2" }}>
+</div>
+<!--// Index Block Header: end -->
+{% endmacro %}

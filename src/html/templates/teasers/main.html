@@ -1,8 +1,42 @@
+<!--
+@desc Page Blocks macro
+
+@param object  	item
+
+@param object  	item.params				        Params for teaser
+@param object  	item.data				        Data for teaser
+
+@param string  	item.params.container_class	    CSS class container
+@param string  	item.params.link_class		    CSS class for link
+@param string  	item.params.image_class		    CSS class for image
+@param string  	item.params.title_tag	        Tag title
+@param string  	item.params.title_class	        CSS class for title
+
+@param string	item.data.link				    Link to teaser details
+@param string	item.data.image				    Link to teaser image
+@param string	item.data.title				    Title teaser
+
+<code>
+item = {
+	"params": {
+		"container_class": "",
+		"link_class": "",
+		"title_tag": "h3"
+	},
+	"data": {
+		"image": "/img/single_001.jpg",
+		"link": "#",
+		"title": "Одиночные"
+	}
+};
+</code>
+
+-->
 {% macro teasers_main(item) %}
 <!-- macro teasers main: start -->
     <article class="teaser-main position-relative overflow-hidden{% if item.params.container_class %} {{ item.params.container_class }}{% endif %}">
-        <a href="{{ item.data.link }}" class="teaser-main__link position-absolute h-100 w-100{% if item.params.link_class %} {{ item.params.link_class }}{% endif %}"></a>
-        <img src="{{ item.data.image }}" class="teaser-main__image{% if item.params.image_class %} {{ item.params.image_class }}{% endif %}">
+        <a href="{{ item.data.link }}" class="teaser-main__link position-absolute h-100 w-100{% if item.params.link_class %} {{ item.params.link_class }}{% endif %}"{% if item.data.title %} title="{{ item.data.title }}"{% endif %}></a>
+        <img src="{{ item.data.image }}" class="teaser-main__image{% if item.params.image_class %} {{ item.params.image_class }}{% endif %}"{% if item.data.title %} alt="{{ item.data.title }}" title="{{ item.data.title }}"{% endif %}>
         {% if item.data.title %}
         <div class="teaser-main__title__container position-absolute p-2">
             <div class="teaser-main__title__background position-absolute w-100 h-100 rounded"></div>

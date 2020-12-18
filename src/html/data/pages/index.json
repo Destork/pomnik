@@ -1,4 +1,308 @@
 {
+    "pageData": [
+        {
+            "type": "macro",
+            "macroFile": "html/templates/blocks/block.index.html",
+            "macroFunc": "index_block",
+            "data": {
+                "params": {
+                    "header": {
+                        "title_tag": "h2",
+                        "title": "Памятники"
+                    },
+                    "container_class": "col-12",
+                    "items_class": "row justify-content-center"
+                },
+                "items": [
+                    {
+                        "class": "col-12 col-sm-6 col-md-4 mt-0",
+                        "type": "macro",
+                        "macroFile": "html/templates/teasers/main.html",
+                        "macroFunc": "teasers_main",
+                        "data": {
+                            "params": {
+                                "container_class": "",
+                                "link_class": "",
+                                "title_tag": "h3"
+                            },
+                            "data": {
+                                "image": "/img/single_001.jpg",
+                                "link": "#",
+                                "title": "Одиночные"
+                            }
+                        }
+                    },
+                    {
+                        "class": "col-12 col-sm-6 col-md-4 mt-3 mt-sm-0",
+                        "type": "macro",
+                        "macroFile": "html/templates/teasers/main.html",
+                        "macroFunc": "teasers_main",
+                        "data": {
+                            "params": {
+                                "container_class": "",
+                                "link_class": "",
+                                "title_tag": "h3"
+                            },
+                            "data": {
+                                "image": "/img/single_001.jpg",
+                                "link": "#",
+                                "title": "Двойные"
+                            }
+                        }
+                    },
+                    {
+                        "class": "col-12 col-sm-6 col-md-4 mt-3 mt-md-0",
+                        "type": "macro",
+                        "macroFile": "html/templates/teasers/main.html",
+                        "macroFunc": "teasers_main",
+                        "data": {
+                            "params": {
+                                "container_class": "",
+                                "link_class": "",
+                                "title_tag": "h3"
+                            },
+                            "data": {
+                                "image": "/img/single_001.jpg",
+                                "link": "#",
+                                "title": "Комплексы"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "macro",
+            "macroFile": "html/templates/blocks/block.index.html",
+            "macroFunc": "index_block",
+            "data": {
+                "params": {
+                    "header": {
+                        "title_tag": "h2",
+                        "title": "Ограды"
+                    },
+                    "container_class": "col-12 mt-3",
+                    "items_class": "row justify-content-center"
+                },
+                "items": [
+                    {
+                        "class": "col-12 col-sm-6 col-md-4 mt-0",
+                        "type": "macro",
+                        "macroFile": "html/templates/teasers/main.html",
+                        "macroFunc": "teasers_main",
+                        "data": {
+                            "params": {
+                                "container_class": "",
+                                "link_class": "",
+                                "title_tag": "h3"
+                            },
+                            "data": {
+                                "image": "/img/single_001.jpg",
+                                "link": "#",
+                                "title": "Гранитная"
+                            }
+                        }
+                    },
+                    {
+                        "class": "col-12 col-sm-6 col-md-4 mt-3 mt-sm-0",
+                        "type": "macro",
+                        "macroFile": "html/templates/teasers/main.html",
+                        "macroFunc": "teasers_main",
+                        "data": {
+                            "params": {
+                                "container_class": "",
+                                "link_class": "",
+                                "title_tag": "h3"
+                            },
+                            "data": {
+                                "image": "/img/single_001.jpg",
+                                "link": "#",
+                                "title": "Металлическая"
+                            }
+                        }
+                    },
+                    {
+                        "class": "col-12 col-sm-6 col-md-4 mt-3 mt-md-0",
+                        "type": "macro",
+                        "macroFile": "html/templates/teasers/main.html",
+                        "macroFunc": "teasers_main",
+                        "data": {
+                            "params": {
+                                "container_class": "",
+                                "link_class": "",
+                                "title_tag": "h3"
+                            },
+                            "data": {
+                                "image": "/img/single_001.jpg",
+                                "link": "#",
+                                "title": "Кованая"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "macro",
+            "macroFile": "html/templates/blocks/block.index.html",
+            "macroFunc": "index_block",
+            "data": {
+                "params": {
+                    "header": {
+                        "title_tag": "h2",
+                        "title": "Благоустройство"
+                    },
+                    "container_class": "col-12 mt-3",
+                    "items_class": "row justify-content-center"
+                },
+                "items": [
+                    {
+                        "class": "col-12 col-sm-4 col-md-3 mt-0",
+                        "type": "macro",
+                        "macroFile": "html/templates/teasers/main.html",
+                        "macroFunc": "teasers_main",
+                        "data": {
+                            "params": {
+                                "container_class": "",
+                                "link_class": "",
+                                "title_tag": "h3"
+                            },
+                            "data": {
+                                "image": "/img/single_001.jpg",
+                                "link": "#",
+                                "title": "Установка"
+                            }
+                        }
+                    },
+                    {
+                        "class": "col-12 col-sm-4 col-md-3 mt-3 mt-sm-0",
+                        "type": "macro",
+                        "macroFile": "html/templates/teasers/main.html",
+                        "macroFunc": "teasers_main",
+                        "data": {
+                            "params": {
+                                "container_class": "",
+                                "link_class": "",
+                                "title_tag": "h3"
+                            },
+                            "data": {
+                                "image": "/img/single_001.jpg",
+                                "link": "#",
+                                "title": "На плитку"
+                            }
+                        }
+                    },
+                    {
+                        "class": "col-12 col-sm-4 col-md-3 mt-3 mt-sm-0",
+                        "type": "macro",
+                        "macroFile": "html/templates/teasers/main.html",
+                        "macroFunc": "teasers_main",
+                        "data": {
+                            "params": {
+                                "container_class": "",
+                                "link_class": "",
+                                "title_tag": "h3"
+                            },
+                            "data": {
+                                "image": "/img/single_001.jpg",
+                                "link": "#",
+                                "title": "На бессер"
+                            }
+                        }
+                    },
+                    {
+                        "class": "col-12 col-sm-4 col-md-3 mt-3 mt-md-0",
+                        "type": "macro",
+                        "macroFile": "html/templates/teasers/main.html",
+                        "macroFunc": "teasers_main",
+                        "data": {
+                            "params": {
+                                "container_class": "",
+                                "link_class": "",
+                                "title_tag": "h3"
+                            },
+                            "data": {
+                                "image": "/img/single_001.jpg",
+                                "link": "#",
+                                "title": "Монолитные"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "macro",
+            "macroFile": "html/templates/blocks/block.index.html",
+            "macroFunc": "index_block",
+            "data": {
+                "params": {
+                    "header": {
+                        "title_tag": "h2",
+                        "title": "Другое"
+                    },
+                    "container_class": "col-12 mt-3",
+                    "items_class": "row justify-content-center"
+                },
+                "items": [
+                    {
+                        "class": "col-12 col-sm-6 col-md-4 mt-0",
+                        "type": "macro",
+                        "macroFile": "html/templates/teasers/main.html",
+                        "macroFunc": "teasers_main",
+                        "data": {
+                            "params": {
+                                "container_class": "",
+                                "link_class": "",
+                                "title_tag": "h3"
+                            },
+                            "data": {
+                                "image": "/img/single_001.jpg",
+                                "link": "#",
+                                "title": "Вазы"
+                            }
+                        }
+                    },
+                    {
+                        "class": "col-12 col-sm-6 col-md-4 mt-3 mt-sm-0",
+                        "type": "macro",
+                        "macroFile": "html/templates/teasers/main.html",
+                        "macroFunc": "teasers_main",
+                        "data": {
+                            "params": {
+                                "container_class": "",
+                                "link_class": "",
+                                "title_tag": "h3"
+                            },
+                            "data": {
+                                "image": "/img/single_001.jpg",
+                                "link": "#",
+                                "title": "Лампады"
+                            }
+                        }
+                    },
+                    {
+                        "class": "col-12 col-sm-6 col-md-4 mt-3 mt-md-0",
+                        "type": "macro",
+                        "macroFile": "html/templates/teasers/main.html",
+                        "macroFunc": "teasers_main",
+                        "data": {
+                            "params": {
+                                "container_class": "",
+                                "link_class": "",
+                                "title_tag": "h3"
+                            },
+                            "data": {
+                                "image": "/img/single_001.jpg",
+                                "link": "#",
+                                "title": "Цветы искусственные"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
     "pageInfo": {
         "title": "Каталог",
         "description": "",

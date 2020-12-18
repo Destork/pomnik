@@ -47,3 +47,18 @@
 .vh-100 {
   height: calc(100 * var(--vh, 1vh)) !important;
 }
+
+.max-vh-100 {
+  max-height: 100vh !important;
+  max-height: calc(100 * var(--vh, 1vh)) !important;
+}
+
+.max-vh-md-none {
+  max-height: none;
+}
+
+@include media-breakpoint-up(md) {
+  .overflow-md-visible {
+    overflow: visible !important;
+  }
+}

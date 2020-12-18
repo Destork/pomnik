@@ -8,6 +8,19 @@
     "type": "git",
     "url": "git://github.com/itchief/gulp-project-bootstrap-4.git"
   },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 2 chrome version",
+      "last 2 firefox version",
+      "last 2 safari version",
+      "last 1 ie version"
+    ]
+  },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@popperjs/core": "^2.6.0",

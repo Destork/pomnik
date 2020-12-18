@@ -1,0 +1,46 @@
+<!--
+@desc Page Blocks macro
+
+@param array   	page_data
+
+@param string  	page_data.type				Type of block("html", "macro" or empty)
+@param string	page_data.macroFile			Path with filename on source folder("/src/")
+@param string	page_data.macroFunc			Macro function name
+@param mixed	page_data.data				Data for block(string or object for macro)
+
+<code>
+
+</code>
+page_data = [
+	{
+		"type": "macro",
+		"macroFile": "html/templates/blocks/block.index.html",
+		"macroFunc": "index_block",
+		"data": {
+			...
+		}
+	},
+	{
+		"type": "macro",
+		"macroFile": "html/templates/blocks/block.index.html",
+		"macroFunc": "index_block",
+		"data": {
+			...
+		}
+	}
+];
+-->
+{% macro page_blocks(page_data) %}
+<!--// Page Blocks: start -->
+	{% for block in page_data %}
+		{% if block.type == 'html' %}
+			{{ block.data | safe }}
+		{% elif block.type == 'macro' %}
+			{% import block.macroFile as macro %}
+			{{ macro[block.macroFunc](block.data) }}
+		{% else %}
+			{{ block.data }}
+		{% endif %}
+	{% endfor %}
+<!--// Page Blocks: end -->
+{% endmacro %}

@@ -4,7 +4,7 @@
       {
         "icon": "facebook",
         "link": "#",
-        "label": "facebook"
+        "label": "Facebook"
       },
       {
         "icon": "youtube",
@@ -27,19 +27,22 @@
         "type": "link",
         "link": "tel:+375299029696",
         "text": "+375 29 902 96 96",
-        "icon": "phone"
+        "icon": "phone",
+        "title": "Телефон для связи"
       },
       {
         "type": "link",
         "link": "tel:+375297077617",
         "text": "+375 29 707 76 17",
-        "icon": "mobile"
+        "icon": "mobile",
+        "title": "Телефон для связи"
       },
       {
         "type": "link",
         "link": "mailto:pomnik_info@tut.by",
         "text": "pomnik_info@tut.by",
-        "icon": "envelope"
+        "icon": "envelope",
+        "title": "E-mail для связи"
       },
       {
         "type": "text",

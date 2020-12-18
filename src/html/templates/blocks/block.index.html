@@ -1,0 +1,75 @@
+<!--
+@desc Page Blocks macro
+
+@param object	data
+
+@param array	data.items
+@param object  	data.params
+
+@param object  	data.params.header				Params for header macro
+@param string  	data.params.container_class		CSS class container
+@param string  	data.params.items_class			CSS class items container
+
+@param string	data.items.class				CSS class item
+@param string	data.items.type					Type of item("html", "macro" or empty)
+@param string	data.items.macroFile			Path with filename on source folder("/src/")
+@param string	data.items.macroFunc			Macro function name
+@param mixed	data.items.data					Data for item(string or object for macro)
+
+<code>
+data = {
+	"params": {
+		"header": {
+			...
+		},
+		"container_class": "col-12",
+		"items_class": "row"
+	},
+	"items": [
+		{
+			"class": "col-4",
+			"type": "macro",
+			"macroFile": "html/templates/teasers/main.html",
+			"macroFunc": "teasers_main",
+			"data": {
+				...
+			}
+		},
+		{
+			"class": "col-4",
+			"type": "macro",
+			"macroFile": "html/templates/teasers/main.html",
+			"macroFunc": "teasers_main",
+			"data": {
+				...
+			}
+		}
+	]
+}
+</code>
+
+-->
+{% macro index_block(data) %}
+<!--// Index Block: start -->
+<div class="index-block__container{% if data.params.container_class %} {{ data.params.container_class }}{% endif %}">
+	{% if data.params.header %}
+		{% from 'html/templates/blocks/block.index.header.html' import index_block_header %}
+		{{ index_block_header(data.params.header) }}
+	{% endif %}
+	<div class="index-block__items{% if data.params.header %} mt-3{% endif %}{% if data.params.items_class %} {{ data.params.items_class }}{% endif %}">
+		{% for item in data.items %}
+			<div class="index-block__item{% if item.class %} {{ item.class }}{% endif %}">
+				{% if item.type == 'html' %}
+					{{ item.data | safe }}
+				{% elif item.type == 'macro' %}
+					{% import item.macroFile as macro %}
+					{{ macro[item.macroFunc](item.data) }}
+				{% else %}
+					{{ item.data }}
+				{% endif %}
+			</div>
+		{% endfor %}
+	</div>
+</div>
+<!--// Index Block: end -->
+{% endmacro %}
