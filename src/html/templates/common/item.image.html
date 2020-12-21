@@ -1,0 +1,32 @@
+<!--
+@desc Menu items macro
+
+@param object	item
+
+@param string  	item.image_path                   	Path to image without extension
+@param string   item.image_class       				CSS class for image
+@param string   item.image_extension       			Image extension
+@param string   item.image_width       				Image width
+@param string   item.image_height       			Image height
+@param string   item.image_title       				Image height
+
+-->
+{% macro image_item(item) %}
+<!--// Image Item: start -->
+<img
+		data-src="{{ item.image_path }}.{{ item.image_extension or 'jpg' }}"
+		loading="lazy"
+		class="{% if item.image_class %}{{ item.image_class }}{% endif %}"
+		{% if item.image_width %}
+			width="{{ item.image_width }}"
+		{% endif %}
+		{% if item.image_height %}
+			height="{{ item.image_height }}"
+		{% endif %}
+		{% if item.image_title %}
+			alt="{{ item.image_title }}"
+			title="{{ item.image_title }}"
+		{% endif %}
+>
+<!--// Image Item: end -->
+{% endmacro %}

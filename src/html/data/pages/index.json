@@ -26,7 +26,12 @@
                                 "title_tag": "h3"
                             },
                             "data": {
-                                "image": "/img/single_001.jpg",
+                                "image": {
+                                    "image_path": "/img/single_001",
+                                    "image_extension": "jpg",
+                                    "image_class": "teaser-main__image",
+                                    "image_title": "Одиночные"
+                                },
                                 "link": "#",
                                 "title": "Одиночные"
                             }
@@ -44,7 +49,12 @@
                                 "title_tag": "h3"
                             },
                             "data": {
-                                "image": "/img/single_001.jpg",
+                                "image": {
+                                    "image_path": "/img/single_001",
+                                    "image_extension": "jpg",
+                                    "image_class": "teaser-main__image",
+                                    "image_title": "Двойные"
+                                },
                                 "link": "#",
                                 "title": "Двойные"
                             }
@@ -62,7 +72,12 @@
                                 "title_tag": "h3"
                             },
                             "data": {
-                                "image": "/img/single_001.jpg",
+                                "image": {
+                                    "image_path": "/img/single_001",
+                                    "image_extension": "jpg",
+                                    "image_class": "teaser-main__image",
+                                    "image_title": "Комплексы"
+                                },
                                 "link": "#",
                                 "title": "Комплексы"
                             }
@@ -97,7 +112,12 @@
                                 "title_tag": "h3"
                             },
                             "data": {
-                                "image": "/img/single_001.jpg",
+                                "image": {
+                                    "image_path": "/img/single_001",
+                                    "image_extension": "jpg",
+                                    "image_class": "teaser-main__image",
+                                    "image_title": "Гранитная"
+                                },
                                 "link": "#",
                                 "title": "Гранитная"
                             }
@@ -115,7 +135,12 @@
                                 "title_tag": "h3"
                             },
                             "data": {
-                                "image": "/img/single_001.jpg",
+                                "image": {
+                                    "image_path": "/img/single_001",
+                                    "image_extension": "jpg",
+                                    "image_class": "teaser-main__image",
+                                    "image_title": "Металлическая"
+                                },
                                 "link": "#",
                                 "title": "Металлическая"
                             }
@@ -133,7 +158,12 @@
                                 "title_tag": "h3"
                             },
                             "data": {
-                                "image": "/img/single_001.jpg",
+                                "image": {
+                                    "image_path": "/img/single_001",
+                                    "image_extension": "jpg",
+                                    "image_class": "teaser-main__image",
+                                    "image_title": "Кованая"
+                                },
                                 "link": "#",
                                 "title": "Кованая"
                             }
@@ -168,7 +198,12 @@
                                 "title_tag": "h3"
                             },
                             "data": {
-                                "image": "/img/single_001.jpg",
+                                "image": {
+                                    "image_path": "/img/single_001",
+                                    "image_extension": "jpg",
+                                    "image_class": "teaser-main__image",
+                                    "image_title": "Установка"
+                                },
                                 "link": "#",
                                 "title": "Установка"
                             }
@@ -186,7 +221,12 @@
                                 "title_tag": "h3"
                             },
                             "data": {
-                                "image": "/img/single_001.jpg",
+                                "image": {
+                                    "image_path": "/img/single_001",
+                                    "image_extension": "jpg",
+                                    "image_class": "teaser-main__image",
+                                    "image_title": "На плитку"
+                                },
                                 "link": "#",
                                 "title": "На плитку"
                             }
@@ -204,7 +244,12 @@
                                 "title_tag": "h3"
                             },
                             "data": {
-                                "image": "/img/single_001.jpg",
+                                "image": {
+                                    "image_path": "/img/single_001",
+                                    "image_extension": "jpg",
+                                    "image_class": "teaser-main__image",
+                                    "image_title": "На бессер"
+                                },
                                 "link": "#",
                                 "title": "На бессер"
                             }
@@ -222,7 +267,12 @@
                                 "title_tag": "h3"
                             },
                             "data": {
-                                "image": "/img/single_001.jpg",
+                                "image": {
+                                    "image_path": "/img/single_001",
+                                    "image_extension": "jpg",
+                                    "image_class": "teaser-main__image",
+                                    "image_title": "Монолитные"
+                                },
                                 "link": "#",
                                 "title": "Монолитные"
                             }
@@ -257,7 +307,12 @@
                                 "title_tag": "h3"
                             },
                             "data": {
-                                "image": "/img/single_001.jpg",
+                                "image": {
+                                    "image_path": "/img/single_001",
+                                    "image_extension": "jpg",
+                                    "image_class": "teaser-main__image",
+                                    "image_title": "Вазы"
+                                },
                                 "link": "#",
                                 "title": "Вазы"
                             }
@@ -275,7 +330,12 @@
                                 "title_tag": "h3"
                             },
                             "data": {
-                                "image": "/img/single_001.jpg",
+                                "image": {
+                                    "image_path": "/img/single_001",
+                                    "image_extension": "jpg",
+                                    "image_class": "teaser-main__image",
+                                    "image_title": "Лампады"
+                                },
                                 "link": "#",
                                 "title": "Лампады"
                             }
@@ -293,7 +353,12 @@
                                 "title_tag": "h3"
                             },
                             "data": {
-                                "image": "/img/single_001.jpg",
+                                "image": {
+                                    "image_path": "/img/single_001",
+                                    "image_extension": "jpg",
+                                    "image_class": "teaser-main__image",
+                                    "image_title": "Цветы искусственные"
+                                },
                                 "link": "#",
                                 "title": "Цветы искусственные"
                             }

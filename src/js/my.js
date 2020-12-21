@@ -20,7 +20,7 @@ window.initResponsiveMap = function (element) {
 
 function initLazyLoading() {
     if ("loading" in HTMLImageElement.prototype) {
-        var lazyEls = document.querySelectorAll("[loading=lazy]");
+        let lazyEls = document.querySelectorAll("[loading=lazy]");
         lazyEls.forEach(function(lazyEl) {
             lazyEl.setAttribute(
                 "src",
@@ -30,7 +30,7 @@ function initLazyLoading() {
     } else {
         // Dynamically include a lazy loading library of your choice
         // Here including vanilla-lazyload
-        var script             = document.createElement("script");
+        let script             = document.createElement("script");
         script.async           = true;
         script.src             =
             "https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js";
