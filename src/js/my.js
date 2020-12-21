@@ -30,13 +30,14 @@ function initLazyLoading() {
     } else {
         // Dynamically include a lazy loading library of your choice
         // Here including vanilla-lazyload
-        var script = document.createElement("script");
-        script.async = true;
-        script.src =
+        var script             = document.createElement("script");
+        script.async           = true;
+        script.src             =
             "https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js";
         window.lazyLoadOptions = {
             elements_selector: "[loading=lazy]"
             //eventually more options here
         };
         document.body.appendChild(script);
+    }
 }
