@@ -11,13 +11,6 @@ export default function init() {
     });
 }
 
-window.initResponsiveMap = function (element) {
-    let map_container = element.closest('.responsive-map');
-    if (map_container) {
-        map_container.classList.remove('d-none');
-    }
-};
-
 function initLazyLoading() {
     if ("loading" in HTMLImageElement.prototype) {
         let lazyEls = document.querySelectorAll("[loading=lazy]");

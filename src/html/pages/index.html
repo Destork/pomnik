@@ -17,3 +17,13 @@
      </div>
 <!--// Index Footer: end -->
 {% endblock %}
+{% block scripts %}
+     <script>
+          function initResponsiveMap(element) {
+               let map_container = element.closest('.responsive-map');
+               if (map_container) {
+                    map_container.classList.remove('d-none');
+               }
+          }
+     </script>
+{% endblock %}

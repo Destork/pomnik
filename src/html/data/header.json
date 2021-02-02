@@ -1,4 +1,11 @@
 {
+  "logo": {
+    "image_path": "/img/logo1",
+    "image_extension": "png",
+    "image_title": "Pomnik.by",
+    "real_width": "14192",
+    "real_height": "3399"
+  },
   "contactInfo": {
     "socials": [
       {

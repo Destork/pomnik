@@ -13,20 +13,27 @@
 -->
 {% macro image_item(item) %}
 <!--// Image Item: start -->
-<img
-		data-src="{{ item.image_path }}.{{ item.image_extension or 'jpg' }}"
-		loading="lazy"
-		class="{% if item.image_class %}{{ item.image_class }}{% endif %}"
-		{% if item.image_width %}
-			width="{{ item.image_width }}"
-		{% endif %}
-		{% if item.image_height %}
-			height="{{ item.image_height }}"
-		{% endif %}
-		{% if item.image_title %}
-			alt="{{ item.image_title }}"
-			title="{{ item.image_title }}"
+<div
+		class="image__container{% if item.real_width and item.real_height %} image-with-real-size{% endif %}"
+		{% if item.real_width and item.real_height %}
+			style="--real-width: {{ item.real_width }}; --real-height: {{ item.real_height }};"
 		{% endif %}
 >
+	<img
+			data-src="{{ item.image_path }}.{{ item.image_extension or 'jpg' }}"
+			loading="lazy"
+			class="image{% if item.image_class %} {{ item.image_class }}{% endif %}"
+			{% if item.image_width %}
+				width="{{ item.image_width }}"
+			{% endif %}
+			{% if item.image_height %}
+				height="{{ item.image_height }}"
+			{% endif %}
+			{% if item.image_title %}
+				alt="{{ item.image_title }}"
+				title="{{ item.image_title }}"
+			{% endif %}
+	>
+</div>
 <!--// Image Item: end -->
 {% endmacro %}

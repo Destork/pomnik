@@ -8,8 +8,9 @@
     <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.jpg">
     <link rel="canonical" href="{{ globals.httpUrl }}{{ pages[pageId]['pageInfo']['canonicalUrl'] }}">
     <link rel="stylesheet" href="/css/main.min.css">
-    <link rel="preload" href="/fonts/fontawesome-webfont.woff2?v=4.7.0">
+    <link rel="preload" href="/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font">
     <title>{% if pages[pageId]['pageInfo']['title'] %}{{ pages[pageId]['pageInfo']['title'] }} - {% endif %}{{ globals.siteName }}</title>
+    <style>{% include "css/main-critical.css" ignore missing %}</style>
 </head>
 <body>
 <div class="container-fluid px-0 d-flex flex-column min-vh-100">
@@ -31,7 +32,7 @@
     </footer>
     <a href="#top" class="bg-dark position-fixed tap-icon text-white scroll-top" title="В начало страницы"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
 </div>
-<script src="/js/main.js"></script>
+<script type="module" src="/js/main.js"></script>
 {% block scripts %}
     <!-- custom page scripts can be places here -->
 {% endblock %}

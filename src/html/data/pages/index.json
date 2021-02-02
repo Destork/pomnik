@@ -30,7 +30,9 @@
                                     "image_path": "/img/single_001",
                                     "image_extension": "jpg",
                                     "image_class": "teaser-main__image",
-                                    "image_title": "Одиночные"
+                                    "image_title": "Одиночные",
+                                    "real_width": "2000",
+                                    "real_height": "1500"
                                 },
                                 "link": "#",
                                 "title": "Одиночные"
@@ -53,7 +55,9 @@
                                     "image_path": "/img/single_001",
                                     "image_extension": "jpg",
                                     "image_class": "teaser-main__image",
-                                    "image_title": "Двойные"
+                                    "image_title": "Двойные",
+                                    "real_width": "2000",
+                                    "real_height": "1500"
                                 },
                                 "link": "#",
                                 "title": "Двойные"
@@ -76,7 +80,9 @@
                                     "image_path": "/img/single_001",
                                     "image_extension": "jpg",
                                     "image_class": "teaser-main__image",
-                                    "image_title": "Комплексы"
+                                    "image_title": "Комплексы",
+                                    "real_width": "2000",
+                                    "real_height": "1500"
                                 },
                                 "link": "#",
                                 "title": "Комплексы"
@@ -116,7 +122,9 @@
                                     "image_path": "/img/single_001",
                                     "image_extension": "jpg",
                                     "image_class": "teaser-main__image",
-                                    "image_title": "Гранитная"
+                                    "image_title": "Гранитная",
+                                    "real_width": "2000",
+                                    "real_height": "1500"
                                 },
                                 "link": "#",
                                 "title": "Гранитная"
@@ -139,7 +147,9 @@
                                     "image_path": "/img/single_001",
                                     "image_extension": "jpg",
                                     "image_class": "teaser-main__image",
-                                    "image_title": "Металлическая"
+                                    "image_title": "Металлическая",
+                                    "real_width": "2000",
+                                    "real_height": "1500"
                                 },
                                 "link": "#",
                                 "title": "Металлическая"
@@ -162,7 +172,9 @@
                                     "image_path": "/img/single_001",
                                     "image_extension": "jpg",
                                     "image_class": "teaser-main__image",
-                                    "image_title": "Кованая"
+                                    "image_title": "Кованая",
+                                    "real_width": "2000",
+                                    "real_height": "1500"
                                 },
                                 "link": "#",
                                 "title": "Кованая"
@@ -202,7 +214,9 @@
                                     "image_path": "/img/single_001",
                                     "image_extension": "jpg",
                                     "image_class": "teaser-main__image",
-                                    "image_title": "Установка"
+                                    "image_title": "Установка",
+                                    "real_width": "2000",
+                                    "real_height": "1500"
                                 },
                                 "link": "#",
                                 "title": "Установка"
@@ -225,7 +239,9 @@
                                     "image_path": "/img/single_001",
                                     "image_extension": "jpg",
                                     "image_class": "teaser-main__image",
-                                    "image_title": "На плитку"
+                                    "image_title": "На плитку",
+                                    "real_width": "2000",
+                                    "real_height": "1500"
                                 },
                                 "link": "#",
                                 "title": "На плитку"
@@ -248,7 +264,9 @@
                                     "image_path": "/img/single_001",
                                     "image_extension": "jpg",
                                     "image_class": "teaser-main__image",
-                                    "image_title": "На бессер"
+                                    "image_title": "На бессер",
+                                    "real_width": "2000",
+                                    "real_height": "1500"
                                 },
                                 "link": "#",
                                 "title": "На бессер"
@@ -271,7 +289,9 @@
                                     "image_path": "/img/single_001",
                                     "image_extension": "jpg",
                                     "image_class": "teaser-main__image",
-                                    "image_title": "Монолитные"
+                                    "image_title": "Монолитные",
+                                    "real_width": "2000",
+                                    "real_height": "1500"
                                 },
                                 "link": "#",
                                 "title": "Монолитные"
@@ -311,7 +331,9 @@
                                     "image_path": "/img/single_001",
                                     "image_extension": "jpg",
                                     "image_class": "teaser-main__image",
-                                    "image_title": "Вазы"
+                                    "image_title": "Вазы",
+                                    "real_width": "2000",
+                                    "real_height": "1500"
                                 },
                                 "link": "#",
                                 "title": "Вазы"
@@ -334,7 +356,9 @@
                                     "image_path": "/img/single_001",
                                     "image_extension": "jpg",
                                     "image_class": "teaser-main__image",
-                                    "image_title": "Лампады"
+                                    "image_title": "Лампады",
+                                    "real_width": "2000",
+                                    "real_height": "1500"
                                 },
                                 "link": "#",
                                 "title": "Лампады"
@@ -357,7 +381,9 @@
                                     "image_path": "/img/single_001",
                                     "image_extension": "jpg",
                                     "image_class": "teaser-main__image",
-                                    "image_title": "Цветы искусственные"
+                                    "image_title": "Цветы искусственные",
+                                    "real_width": "2000",
+                                    "real_height": "1500"
                                 },
                                 "link": "#",
                                 "title": "Цветы искусственные"

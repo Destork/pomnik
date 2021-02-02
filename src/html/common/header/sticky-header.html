@@ -1,16 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white sticky-top border-bottom border-dark px-0 max-vh-100 max-vh-md-none overflow-auto overflow-md-visible">
     <div class="container">
         <a class="navbar-brand logo-container flex-shrink-0" href="/" title="На главную">
-            {% set item = {
-                "image_path": "/img/logo1",
-                "image_extension": "png",
-                "image_width": "100",
-                "image_height": "28",
-                "image_class": "logo",
-                "image_title": globals.siteName
-            } %}
             {% from 'html/templates/common/item.image.html' import image_item %}
-            {{ image_item(item) }}
+            {{ image_item(header.logo) }}
         </a>
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Раскрыть/Закрыть меню">
             <span class="navbar-toggler-icon"></span>
